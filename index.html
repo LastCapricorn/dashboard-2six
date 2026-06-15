@@ -4,55 +4,149 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./icons/css-icons/icons.css">
+  <link rel="stylesheet" href="./css/icons.css">
   <link rel="stylesheet" href="./css/style.css">
   <script defer src="./js/script.js"></script>
+  <link rel="shortcut icon" href="./images/lc_fav_berry.svg" type="image/svg+xml">
   <title>Dashboard 2Six</title>
 </head>
-<body>
-  <div class="dashboard">
-    <div class="left">
-      <nav>
-        <header>
-          <div class="logo">
-            <div class="rect rect_1"></div>
-            <div class="rect rect_2"></div>
-            <div class="rect rect_3"></div>
-            <div class="rect rect_4"></div>
-          </div>
-          <div class="title"><h1>DashBoard</h1></div>
-        </header>
-        <ul>
-          <li><a href="#"><span class="ph--house-duotone"></span>Home</a></li>
-          <li><a href="#"><span class="ph--identification-card-duotone"></span>Profile</a></li>
-          <li><a href="#"><span class="ph--chat-duotone"></span>Messages</a></li>
-          <li><a href="#"><span class="ph--clock-duotone"></span>History</a></li>
-          <li><a href="#"><span class="ph--chalkboard-duotone"></span>Tasks</a></li>
-          <li><a href="#"><span class="ph--users-three-duotone"></span>Communities</a></li>
-        </ul>
-        <ul>
-          <li><a href="#"><span class="ph--gear-duotone"></span>Settings</a></li>
-          <li><a href="#"><span class="ph--lightbulb-duotone"></span>Support</a></li>
-          <li><a href="#"><span class="ph--shield-check-duotone"></span>Privacy</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="right">
-      <div class="top">
-
+<body class="dashboard">
+  <nav class="menu">
+    <header>
+      <div class="logo" role="button">
+        <div class="rectangle r_1"></div>
+        <div class="rectangle r_2"></div>
+        <div class="rectangle r_3"></div>
+        <div class="rectangle r_4"></div>
       </div>
-      <main>
-        <section class="cards">
-
-        </section>
-        <aside class="announcements">
-
-        </aside>
-        <aside class="trending">
-
-        </aside>
-      </main>
+      <h1 class="title">Dashboard</h1>
+    </header>
+    <ul>
+      <li><a href="#"><span class="ph--house-duotone"></span>Home</a></li>
+      <li><a href="#"><span class="ph--identification-card-duotone"></span>Profile</a></li>
+      <li><a href="#"><span class="ph--chat-duotone"></span>Messages</a></li>
+      <li><a href="#"><span class="ph--clock-duotone"></span>History</a></li>
+      <li><a href="#"><span class="ph--chalkboard-duotone"></span>Tasks</a></li>
+      <li><a href="#"><span class="ph--users-three-duotone"></span>Communities</a></li>
+    </ul>
+    <ul>
+      <li><a href="#"><span class="ph--gear-duotone"></span>Settings</a></li>
+      <li><a href="#"><span class="ph--lightbulb-duotone"></span>Support</a></li>
+      <li><a href="#"><span class="ph--shield-check-duotone"></span>Privacy</a></li>
+    </ul>
+  </nav>
+  <div class="right">
+    <div class="top">
+      <form action="https:google.com/search" role="search">
+        <label for="find">
+          <span class="ph--magnifying-glass-duotone"></span>
+        </label>
+        <input type="search" id="find" name="q" placeholder="find...">
+      </form>
+      <div class="admin">
+        <span class="ph--sun-duotone" role="button"></span>
+        <span class="ph--bell-ringing-duotone"></span>
+        <img width="60">
+        <span>Last Capricorn</span>
+      </div>
+      <div class="greeting">
+        <span>Hi there,</span>
+        <img width="100">
+        <span>Last Capricorn (@LC)</span>
+      </div>
+      <ul>
+        <li><a href="">New</a></li>
+        <li><a href="">Upload</a></li>
+        <li><a href="">Share</a></li>
+      </ul>
     </div>
+    <main>
+      <section class="projects">
+        <h2>Your Projects</h2>
+        <div class="cards">
+        </div>
+      </section>
+      <aside class="announcements">
+        <div name="announcements" role="button">
+          <span class="ph--megaphone-duotone"></span>
+          <h3>Announcements</h3>
+          <span class="ph--arrow-fat-lines-down-duotone"></span>
+        </div>
+        <ul>
+          <li>
+            <h4>Logo</h4>
+            <p>
+              Again, the logo is Grid too.
+              Am I correct in assuming that everyone knows a logo in the top-left
+              corner of a website always carries a certain functionality?
+            </p>
+          </li>
+          <li>
+            <h4>Projects</h4>
+            <p>
+              I'll display my upcoming projects here.
+              That's the plan, at least.
+            </p>
+          </li>
+          <li>
+            <h4>Awesome</h4>
+            <p>
+              ...playground this is.
+              I am putting far too much effort into this project.
+            </p>
+          </li>
+          <li>
+            <h4>SVG</h4>
+            <p>
+              The Google Fonts logo is homemade. Playground—remember?
+            </p>
+          </li>
+        </ul>
+      </aside>
+      <aside class="trending">
+        <div name="trending" role="button">
+          <span class="ph--shooting-star-duotone"></span>
+          <h3> Trending</h3>
+          <span class="ph--arrow-fat-lines-down-duotone"></span>
+        </div>
+        <ul>
+          <li class="odin">
+            <div>
+            </div>
+            <a href="https://theodinproject.com">@odin</a>
+            <span>The Odin Project</span>
+          </li>
+          <li class="phosphor">
+            <div>
+              <span class="ph--phosphor-logo-duotone"></span>
+            </div>
+            <a href="https://phosphoricons.com/">@phosphor</a>
+            <span>...and once again I've used these amazing icons.</span>
+          </li>
+          <li class="gfont">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="42" fill="currentBackground" stroke="currentColor" stroke-width="2" />
+                <circle cx="28" cy="35" r="10" fill="transparent" stroke="currentColor" stroke-width="2" />
+                <circle cx="68" cy="36" r="12" fill="transparent" stroke="currentColor" stroke-width="2" />
+                <circle cx="68" cy="62" r="14" fill="transparent" stroke="currentColor" stroke-width="2" />
+                <rect x="48" y="24" width="20" height="52" fill="transparent" stroke="currentColor" stroke-width="2" />
+                <polygon points="23 76 48 24 68 24 43 76" fill="transparent" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+            <a href="https://fonts.google.com/">@fonts</a>
+            <span>Space Grotesk - I really like this font</span>
+          </li>
+          <li>
+            <div>
+              <img src="./images/lc_fav_berry.svg" alt="LC-Logo" width="40">
+            </div>
+            <a href="https://github.com/LastCapricorn">@LC</a>
+            <span>Everything is trending when media says so</span>
+          </li>
+        </ul>
+      </aside>
+    </main>
   </div>
 </body>
 </html>

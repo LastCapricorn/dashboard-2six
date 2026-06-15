@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Space Grotesk';
-    src: url('SpaceGrotesk-Light.woff2') format('woff2'),
-        url('SpaceGrotesk-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
