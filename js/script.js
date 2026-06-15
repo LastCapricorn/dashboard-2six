@@ -8,6 +8,8 @@ const dashBoard2six = ( () => {
   const cards = document.querySelector(".cards");
   const logo = document.querySelector(".logo");
   const asideToggle = document.querySelectorAll("main [role='button']");
+  const smallWidth = () => window.innerWidth < 600;
+  const smallInner = () => document.querySelector("main").clientWidth <= 600;
   const repoAdress = "https://github.com/LastCapricorn/";
   const liveAdress = "https://lastcapricorn.github.io/";
   const cardContents = [
@@ -75,20 +77,19 @@ const dashBoard2six = ( () => {
   }
 
   asideToggle.forEach( btn => btn.addEventListener("click", ev => {
+    if (!smallInner()) return;
     document.querySelector(`.${ev.currentTarget.getAttribute("name")}`).classList.toggle("drop");
   }));
-  menuLinks.forEach( ul => ul.addEventListener("click", ev => dashboard.classList.remove("drop")));
 
-  logo.addEventListener("click", () => {
-    if (window.innerWidth > 600) {
-      dashboard.classList.remove("drop");
-      dashboard.classList.toggle("slim");
-    } else {
-      dashboard.classList.remove("slim");
-      dashboard.classList.toggle("drop");
-    }
+  menuLinks.forEach( ul => ul.addEventListener("click",
+    ev => dashboard.classList.remove("drop")));
 
-  });
+  logo.addEventListener("click",
+    () => dashboard.classList.toggle(smallWidth() ? "drop" : "slim"));
+
+  window.addEventListener("resize",
+    () => smallWidth() ? dashboard.classList.remove("slim") : dashboard.classList.remove("drop"));
 
   createCards();
+
 } )();
