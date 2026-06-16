@@ -18,25 +18,25 @@ const dashBoard2six = ( () => {
   const liveAdress = "https://lastcapricorn.github.io/";
   const cardContents = [
     {
-      imgSrc: "../images/admin-dashboard-2023.jpg",
+      imgSrc: "images/admin-dashboard-2023.jpg",
       title: "Project: Admin Dashboard (2023)",
       text: "My previous Version from 2023 on this 2nd Full Stack JavaScript Project from TOP.",
       repoName: "admin-dashboard",
     },
     {
-      imgSrc: "../images/top-project_sign-up-form_2026.jpg",
+      imgSrc: "images/top-project_sign-up-form_2026.jpg",
       title: "Project: Sign-up Form",
       text: "Project no. 1 of TOP's Full Stack JavaScript Path. I don't know where the idea came from to turn this into a tribute to Metallica as well.",
       repoName: "sign-up-xx6",
     },
     {
-      imgSrc: "../images/top-project_calculator_2026.jpg",
+      imgSrc: "images/top-project_calculator_2026.jpg",
       title: "Project: Calculator",
       text: "Project no. 5, the finale of TOP's Foundations Course. It was a major challenge to get that up and running.",
       repoName: "calcoolator20vi",
     },
     {
-      imgSrc: "../images/top-project_etch-a-sketch_2026.jpg",
+      imgSrc: "images/top-project_etch-a-sketch_2026.jpg",
       title: "Project: Etch-a-Sketch",
       text: "Project no. 4 of TOP's Foundations Course. Maybe I'll create an SVG version of it that offers real utility.",
       repoName: "etch-a-sketch-2026",
