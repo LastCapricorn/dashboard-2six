@@ -4,12 +4,16 @@ const dashBoard2six = ( () => {
 
   const dashboard = document.querySelector(".dashboard");
   const menu = document.querySelector(".menu");
-  const menuLinks = document.querySelectorAll(".menu ul");
+  const menuUl = document.querySelectorAll(".menu ul");
+  const menuLi = document.querySelectorAll(".menu li a");
   const cards = document.querySelector(".cards");
   const logo = document.querySelector(".logo");
   const asideToggle = document.querySelectorAll("main [role='button']");
+  const schemeToggle = document.querySelectorAll(".top [role='button']");
+  const trendLi = document.querySelectorAll(".trending a");
   const smallWidth = () => window.innerWidth < 600;
-  const smallInner = () => document.querySelector("main").clientWidth <= 600;
+  const smallInner = () => document.querySelector("main").clientWidth <= 615;
+  const preferredScheme = () => getComputedStyle(document.documentElement).getPropertyValue("color-scheme");
   const repoAdress = "https://github.com/LastCapricorn/";
   const liveAdress = "https://lastcapricorn.github.io/";
   const cardContents = [
@@ -76,16 +80,52 @@ const dashBoard2six = ( () => {
     });
   }
 
-  asideToggle.forEach( btn => btn.addEventListener("click", ev => {
+  const toggleMenu = () =>
+    dashboard.classList.toggle(smallWidth() ? "drop" : "slim");
+
+  const removeClassDrop = () =>
+    dashboard.classList.remove("drop");
+
+  function toggleTheme() {
+    document.documentElement.dataset.theme =
+      `${preferredScheme() === "dark" ? "light" : "dark"}`;
+    document.documentElement.style.setProperty("color-scheme",
+      `${preferredScheme() === "dark" ? "light" : "dark"}`);
+  }
+
+  function toggleAside(ev) {
     if (!smallInner()) return;
     document.querySelector(`.${ev.currentTarget.getAttribute("name")}`).classList.toggle("drop");
-  }));
+  }
 
-  menuLinks.forEach( ul => ul.addEventListener("click",
-    ev => dashboard.classList.remove("drop")));
+  function checkDropState() {
+    if( dashboard.classList.contains("drop") || !smallWidth() ) return;
+    dashboard.classList.add("drop");
+  }
 
-  logo.addEventListener("click",
-    () => dashboard.classList.toggle(smallWidth() ? "drop" : "slim"));
+  function checkTrendState() {
+    if( document.querySelector(".trending").classList.contains("drop") || !smallInner()) return;
+    document.querySelector(".trending").classList.add("drop");
+  }
+
+  schemeToggle.forEach( btn => btn.addEventListener("click", toggleTheme));
+  schemeToggle.forEach( btn => btn.addEventListener("keypress",
+    ev => ev.key === "Enter" ? toggleTheme() : ""));
+
+  asideToggle.forEach( btn => btn.addEventListener("click", toggleAside));
+  asideToggle.forEach( btn => btn.addEventListener("keypress",
+    ev => ev.key === "Enter" ? toggleAside(ev) : ""));
+
+  menuUl.forEach( ul => ul.addEventListener("click", removeClassDrop));
+  menuUl.forEach( ul => ul.addEventListener("enter",
+    ev => ev.key === "Enter" ? removeClassDrop() : ""));
+
+  menuLi.forEach( li => li.addEventListener("focus", checkDropState));
+  trendLi.forEach( li => li.addEventListener("focus", checkTrendState));
+
+  logo.addEventListener("click", toggleMenu);
+  logo.addEventListener("keypress",
+    ev => ev.key === "Enter" ? toggleMenu() : "");
 
   window.addEventListener("resize",
     () => smallWidth() ? dashboard.classList.remove("slim") : dashboard.classList.remove("drop"));

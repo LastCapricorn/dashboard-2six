@@ -2,26 +2,26 @@
   font-family: 'Space Grotesk';
   src: url('../fonts/SpaceGrotesk-VariableFont_wght.woff2') format('woff2'),
     url('../fonts/SpaceGrotesk-VariableFont_wght.ttf') format('ttf');
-  font-optical-sizing: auto;
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --bg-nav: hsl(290 21% 15% / 1);
-  --bg-top: hsl(0 0% 93% / 1);
-  --bg-main: hsl(55 100% 95% / 1);
-  --bg-a-hover: hsl(290 21% 18% / 1);
-  --br-link-top: hsl(0 0% 90% / 1);
-  --sh-nav: hsl(290 21% 15% / 0.5);
-  --ch-light: hsl(55 100% 92% / 1);
-  --ch-dark: hsl(290 50% 5% / 1);
-  --ch-a-hover: hsl(55 100% 84% / 1);
-  --ol-input: hsl(290 100% 45% / 1);
-  --icon-card-hover: hsl(290 65% 35% / 1);
+  color-scheme: light dark;
+  --bg-nav: light-dark( hsl(290 21% 15% / 1), hsl(290 21% 15% / 1) );
+  --bg-top: light-dark( hsl(0 0% 93% / 1), hsl(0 0% 15% / 1) );
+  --bg-main: light-dark( hsl(55 100% 95% / 1), hsl(290 15% 8% / 1) );
+  --bg-a-hover: light-dark( hsl(290 21% 18% / 1), hsl(290 21% 11% / 1) );
+  --br-link-top: light-dark( hsl(0 0% 90% / 1), hsl(0 0% 90% / 1) );
+  --sh-nav: light-dark( hsl(290 21% 15% / 0.5), hsl(290 21% 35% / 0.5) );
+  --ch-light: light-dark( hsl(55 100% 92% / 1), hsl(55 100% 92% / 1) );
+  --ch-dark: light-dark( hsl(290 50% 5% / 1), hsl(290 20% 95% / 1) );
+  --ch-a-hover: light-dark( hsl(55 100% 84% / 1), hsl(55 100% 84% / 1) );
+  --ol-input: light-dark( hsl(290 100% 45% / 1), hsl(290 100% 45% / 1) );
+  --icon-card-hover: light-dark( hsl(290 65% 35% / 1), hsl(290 65% 35% / 1) );
 
-  --lc-img-src: url("../images/Bates_Motel.jpg")
+  --lc-img-src: url("../images/Bates_Motel.jpg");
 }
 
 @property --menu-width {
@@ -60,6 +60,7 @@ html {
   box-sizing: border-box;
   font-size: 16px;
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 *, *::before, *::after {
   box-sizing: inherit;
@@ -211,7 +212,8 @@ header {
 .top .admin img {
   clip-path: circle(20px at 38% 52%);
 }
-.admin [class^="ph--"] {
+.admin > [class^="ph--"],
+.admin > div {
   order: 1;
 }
 .admin [role="button"]:hover,
@@ -355,7 +357,7 @@ main:has(aside.drop) .projects {
 }
 .card div a:any-link {
   display: inline-block;
-  color: var(--bg-nav);
+  color: light-dark(var(--bg-nav), var(--bg-main));
 }
 .card div a:hover,
 .card div a:active,
@@ -463,7 +465,7 @@ main:has(aside.drop) .projects {
   color: var(--ch-light);
 }
 
-@container top-main (width > 600px) {
+@container top-main (width > 615px) {
   .top {
     padding: 0.5rem;
     grid-template-areas:
@@ -488,7 +490,8 @@ main:has(aside.drop) .projects {
     justify-self: end;
     grid-template-columns: 30px 30px 1fr auto;
   }
-  .admin [class^="ph--"] {
+  .admin > [class^="ph--"],
+  .admin > div {
     order: 0;
   }
   main {
@@ -544,4 +547,43 @@ main:has(aside.drop) .projects {
   .right {
     grid-column: 2 / 3;
   }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+  .scheme [value="dark"] {
+    display: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+  .scheme [value="light"] {
+    display: none;
+  }
+}
+.scheme {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+.scheme > * {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: inline-block;
+}
+:root[data-theme="dark"] .scheme [value="light"] {
+  display: none;
+}
+:root[data-theme="dark"] .scheme [value="dark"] {
+  display: inline-block;
+}
+:root[data-theme="light"] .scheme [value="dark"] {
+  display: none;
+}
+:root[data-theme="light"] .scheme [value="light"] {
+  display: inline-block;
 }

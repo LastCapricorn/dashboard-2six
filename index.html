@@ -13,7 +13,7 @@
 <body class="dashboard">
   <nav class="menu">
     <header>
-      <div class="logo" role="button">
+      <div class="logo" role="button" tabindex="0">
         <div class="rectangle r_1"></div>
         <div class="rectangle r_2"></div>
         <div class="rectangle r_3"></div>
@@ -44,7 +44,10 @@
         <input type="search" id="find" name="q" placeholder="find...">
       </form>
       <div class="admin">
-        <span class="ph--sun-duotone" role="button"></span>
+        <div class="scheme">
+          <span class="ph--sun-duotone" value="light" role="button" tabindex="0"></span>
+          <span class="ph--moon-duotone" value="dark" role="button" tabindex="0"></span>
+        </div>
         <span class="ph--bell-ringing-duotone"></span>
         <img width="60">
         <span>Last Capricorn</span>
@@ -67,7 +70,7 @@
         </div>
       </section>
       <aside class="announcements">
-        <div name="announcements" role="button">
+        <div name="announcements" role="button" tabindex="0">
           <span class="ph--megaphone-duotone"></span>
           <h3>Announcements</h3>
           <span class="ph--arrow-fat-lines-down-duotone"></span>
@@ -104,7 +107,7 @@
         </ul>
       </aside>
       <aside class="trending">
-        <div name="trending" role="button">
+        <div name="trending" role="button" tabindex="0">
           <span class="ph--shooting-star-duotone"></span>
           <h3> Trending</h3>
           <span class="ph--arrow-fat-lines-down-duotone"></span>
