@@ -18,10 +18,10 @@ const dashBoard2six = ( () => {
   const liveAdress = "https://lastcapricorn.github.io/";
   const cardContents = [
     {
-      imgSrc: "images/admin-dashboard-2023.jpg",
-      title: "Project: Admin Dashboard (2023)",
-      text: "My previous Version from 2023 on this 2nd Full Stack JavaScript Project from TOP.",
-      repoName: "admin-dashboard",
+      imgSrc: "images/top-project_library_2026.jpg",
+      title: "Project: Library",
+      text: "Project no. 3 of TOP's Full Stack JavaScript Path. In the end, I am very proud of my rating stars...",
+      repoName: "library-1a",
     },
     {
       imgSrc: "images/top-project_sign-up-form_2026.jpg",
@@ -40,6 +40,12 @@ const dashBoard2six = ( () => {
       title: "Project: Etch-a-Sketch",
       text: "Project no. 4 of TOP's Foundations Course. Maybe I'll create an SVG version of it that offers real utility.",
       repoName: "etch-a-sketch-2026",
+    },
+    {
+      imgSrc: "images/admin-dashboard-2023.jpg",
+      title: "Project: Admin Dashboard (2023)",
+      text: "My previous Version from 2023 on this 2nd Full Stack JavaScript Project from TOP.",
+      repoName: "admin-dashboard",
     },
   ];
 
